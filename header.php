@@ -24,7 +24,9 @@
 <div id="page" class="site">
 	
 	<div class="navbar navbar-light bg-primary py-4"> 
-		<div class="text-white"><span class="brand">Climbing Log</span></div>
+		<div class="container">
+			<div class="text-white"><h1 class="mb-0"><span class="brand">Climbing Log</span></h1></div>
+		</div>
 	</div>
 
 	<div id="content" class="site-content">
