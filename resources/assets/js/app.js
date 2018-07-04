@@ -1,7 +1,11 @@
 import Vue from 'vue';
-import Example from './components/Example.vue';
+import ClimbList from './components/climb/ClimbList.vue';
+import ClimbCard from './components/climb/ClimbCard.vue';
 
 new Vue({
-    el: '#app',
-    components: { Example }
+    el: '#content',
+    components: { 
+        ClimbList,
+        ClimbCard
+     }
 });

@@ -18,7 +18,6 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-	<h1>Front Page</h1>
 		<?php
 		while ( have_posts() ) :
 			the_post();
