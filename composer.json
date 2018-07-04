@@ -1,0 +1,7 @@
+{
+    "name": "jed/climb",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Setup\\": "setup/"}
+    }
+}
