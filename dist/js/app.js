@@ -104,9 +104,7 @@ module.exports = g;
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: 'example',
-  mounted: function mounted() {
-    alert('Mounted!');
-  },
+  mounted: function mounted() {},
   data: function data() {
     return {
       message: 'Vue templates are loading!'
@@ -121,7 +119,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(3);
-module.exports = __webpack_require__(16);
+module.exports = __webpack_require__(11);
 
 
 /***/ }),
@@ -11567,8 +11565,8 @@ process.umask = function() { return 0; };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_cacheDirectory_true_presets_env_modules_false_targets_browsers_2_uglify_true_plugins_transform_object_rest_spread_transform_runtime_polyfill_false_helpers_false_node_modules_vue_loader_lib_selector_type_script_index_0_Example_vue__ = __webpack_require__(1);
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_650f2efa_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Example_vue__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_650f2efa_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Example_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(10);
 var disposed = false
 /* script */
 
@@ -11615,12 +11613,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
+/* 9 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11645,7 +11638,7 @@ if (false) {
 }
 
 /***/ }),
-/* 15 */
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11754,7 +11747,7 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 16 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

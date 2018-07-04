@@ -16,6 +16,9 @@ class Scripts
 
     public static function enqueue_main_script()
     {
+        /**
+         * Must be loaded through the footer
+         */
         wp_enqueue_script('main-js', get_stylesheet_directory_uri().'/dist/js/app.js', [], false, true );
     }
 }

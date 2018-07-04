@@ -8,7 +8,7 @@
 export default {
   name: 'example',
   mounted() {
-    alert('Mounted!');
+
   },
   data () {
     return {
