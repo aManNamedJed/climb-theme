@@ -10423,3 +10423,7 @@ a.text-dark:focus {
   }
 }
 
+ul.primary-menu li a {
+  color: #fff;
+}
+

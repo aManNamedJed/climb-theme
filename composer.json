@@ -2,6 +2,9 @@
     "name": "jed/climb",
     "require": {},
     "autoload": {
-        "psr-4": {"Setup\\": "setup/"}
+        "psr-4": { 
+            "Setup\\": "setup/",
+            "App\\": "app/"
+        }
     }
 }
