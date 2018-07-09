@@ -14,7 +14,8 @@ get_header();
 		<main id="main" class="site-main py-5">
 
 			<header class="page-header">
-                <h1 class="mb-4">All Climbs</h1>
+				<h1>All Climbs</h1>
+				<a href="/climbs/add" class="btn btn-outline-primary mb-4">Submit a New Climb</a>
 			</header><!-- .page-header -->
 
 			<?php
@@ -28,8 +29,8 @@ get_header();
 				<thead class="thead-light">
 					<tr>
 						<th>Name</th>
+						<th>Location</th>
 						<th>Rating</th>
-
 					</tr>
 				</thead>
 				<tbody>
@@ -42,6 +43,14 @@ get_header();
 								<a href="<?php the_permalink(); ?>">
 									<?php the_title(); ?>
 								</a>
+							</td>
+							<td>
+								<?php $locations = wp_get_post_terms( get_the_ID(), 'location', ['orderby' => 'term_id']); ?>
+								<?php foreach( $locations as $location ): ?>
+									<div class="d-inline-block mr-2">
+										<a href="<?php echo get_term_link($location); ?>"><?php echo $location->name; ?></a>
+									</div>
+								<?php endforeach; ?>
 							</td>
 							<td><?php echo App\Climb::convert_rating( get_field('climb_rating') ); ?></td>
 						</tr>

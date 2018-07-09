@@ -23,9 +23,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	
-	<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
 		<div class="container">
-			<a class="navbar-brand text-light font-weight-bold" href="<?php echo home_url('/'); ?>">Climber Journal</a>
+			<a class="navbar-brand text-secondary font-weight-bold" href="<?php echo home_url('/'); ?>">Climber Journal</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -43,7 +43,14 @@
 					<li class="nav-item">
 						<?php if(is_user_logged_in()): ?>
 							<?php $current_user = wp_get_current_user(); ?>
-							<a href="/climbers/<?php echo $current_user->user_login; ?>" class="text-white">My Profile</a>
+							<a href="/climbers/<?php echo $current_user->user_login; ?>" class="text-white">
+								<img width="40" src="<?php echo get_avatar_url( $current_user); ?>" alt="<?php echo $current_user->display_name; ?>" class="rounded-circle mr-3float-left">
+								<?php echo $current_user->display_name; ?>
+							</a>
+						<?php else: ?>
+							<p class="my-0 text-white">
+								<a href="/register" class="text-white">Become a Climber</a> or <a href="/login" class="text-white">Sign In</a>
+							</p>
 						<?php endif; ?>
 					</li>
 				</ul>

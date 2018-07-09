@@ -10,6 +10,8 @@ Setup\Scripts::enqueue_all();
 Setup\PostTypes\Climb::register();
 Setup\PostTypes\Attempt::register();
 
+Setup\Taxonomies\Location::register();
+
 Setup\User::setup_json();
 
 Setup\Roles::add_roles();
