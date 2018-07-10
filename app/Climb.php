@@ -74,4 +74,21 @@ class Climb
 
         return $success_rate;
     }
+
+    function list_hierarchical_locations($climb)
+    {
+        $terms = wp_get_post_terms( $climb->ID, 'location', ['fields' => 'ids'] );
+
+        if( $terms ) {
+            $terms = trim( implode( ',', (array) $terms ), ' ,' );
+
+            wp_list_categories([
+                'title_li' => '',
+                'taxonomy' => 'location',
+                'include'  => $terms,
+                'style'    => '',
+                'separator' => '<span class="d-inline-block px-2 text-secondary">/</span> ',
+            ]);
+        }
+    }
 }

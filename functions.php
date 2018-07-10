@@ -18,7 +18,7 @@ Setup\Roles::add_roles();
 
 Setup\Menus::init();
 
-Setup\ClimberProfile::init();
+Setup\Rewrites::init();
 
 Setup\Admin::init();
 

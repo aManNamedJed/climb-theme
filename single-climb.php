@@ -6,21 +6,57 @@
     $climb = $post; 
 ?>
 
-<div class="container py-5">
+<div class="container py-3">
     <div id="climb-profile">
-        <div class="profile-header mb-5">
+        <div class="climb-header mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="mb-1">
+                        <?php the_title(); ?>
+                        <small class="text-muted"><?php echo App\Climb::convert_rating( get_field('climb_rating') ); ?></small>
+                    </h1>
+                    <div class="location mb-4">
+                            <?php App\Climb::list_hierarchical_locations($climb); ?>
+                    </div>
+    </div>
+            </div>
             <div class="row">
                 <div class="col-lg-4">
-                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="float-left img-fluid">
+                    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-fluid">
                     
-                    <!-- <div class="climb-info px-3 float-left">
-                        <h1 class="h5 mb-1"><?php echo $climber->display_name; ?></h1>
-                        <p class="text-muted">Joined <?php echo App\Climber::member_since($climber); ?></p>
-                    </div> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg btn-block mt-4 mb-1" data-toggle="modal" data-target="#exampleModal">
+                        Add an Attempt
+                    </button>
+
+                    <button type="button" class="btn btn-sm btn-outline-primary btn-block mb-4">
+                        What's this?
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="col-lg-8">
-                    <div class="card-deck">
+                    <div class="card-deck px-lg-4">
 
                         <div class="card bg-light border-0 rounded-0">
                             <div class="card-body text-center">
@@ -38,10 +74,13 @@
                                 </p>
                             </div>
                         </div>
+
                     </div>
-                    <!-- <p class="text-muted">
-                        <?php echo get_the_author_meta('description', $climber->ID ); ?>
-                    </p> -->
+
+                    <div class="text-muted py-4 px-lg-4">
+                        <h2 class="h5 text-dark">Description</h3>
+                        <?php the_field('climb_description'); ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,19 +116,20 @@
                             <?php $climber = get_user_by('id', $climber); ?>
 
                             <tr>
-                                <td>
+                                <td class="align-middle">
                                     <a href="/climbers/<?php echo $climber->user_nicename; ?>">
+                                    <img width="40" src="<?php echo get_avatar_url( $climber); ?>" alt="<?php echo $climber->display_name; ?>" class="rounded-circle mr-1">
                                         <?php echo $climber->display_name; ?>
                                     </a>
                                 </td>
-                                <td>
+                                <td class="align-middle">
                                     <?php if( get_field('attempt_success') ): ?>
                                         <span>Yes</span>
                                     <?php else: ?>
                                         <span>No</span>
                                     <?php endif; ?>
                                 </td>
-                                <td><?php the_field('attempt_date'); ?></td>
+                                <td class="align-middle"><?php the_field('attempt_date'); ?></td>
                             </tr>
         
                     <?php endwhile; ?>

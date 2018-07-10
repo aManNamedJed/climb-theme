@@ -1,14 +1,14 @@
 <?php
 namespace Setup;
 
-class ClimberProfile
+class Rewrites
 {
     /**
      * Initialization
      * This method should be run from functions.php
      */
     public static function init()
-    {
+    {   
         add_action( 'init', [__CLASS__, 'climber_profile_rewrite_init'] );
         add_filter( 'query_vars', [__CLASS__, 'climber_profile_query_vars'] );
     }

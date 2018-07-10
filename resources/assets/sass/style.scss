@@ -8,4 +8,11 @@
 */
 @import "~bootstrap/scss/bootstrap";
 
+/**
+* Globals
+*/
+@import "common/global";
+
 @import "common/menus";
+
+@import "climb";

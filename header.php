@@ -44,12 +44,12 @@
 						<?php if(is_user_logged_in()): ?>
 							<?php $current_user = wp_get_current_user(); ?>
 							<a href="/climbers/<?php echo $current_user->user_login; ?>" class="text-white">
-								<img width="40" src="<?php echo get_avatar_url( $current_user); ?>" alt="<?php echo $current_user->display_name; ?>" class="rounded-circle mr-3float-left">
+								<img width="40" src="<?php echo get_avatar_url( $current_user); ?>" alt="<?php echo $current_user->display_name; ?>" class="rounded-circle mr-1">
 								<?php echo $current_user->display_name; ?>
 							</a>
 						<?php else: ?>
 							<p class="my-0 text-white">
-								<a href="/register" class="text-white">Become a Climber</a> or <a href="/login" class="text-white">Sign In</a>
+								<a href="/register" >Become a Climber</a> or <a href="/login">Sign In</a>
 							</p>
 						<?php endif; ?>
 					</li>

@@ -25,7 +25,7 @@ class Attempt
                 'parent_item_colon'  => "",
                 'menu_name'          => $cpt_plural
             ],
-            'public'                => false,
+            'public'                => true,
             'exclude_from_search'   => true,
             'publicly_queryable'    => false,
             'show_ui'               => true,
